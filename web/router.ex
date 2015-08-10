@@ -7,20 +7,14 @@ defmodule Crisco.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
-  end
-
-  pipeline :api do
-    plug :accepts, ["json"]
+    plug UserInfo
   end
 
   scope "/", Crisco do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", LinkController, :new
+    post "/", LinkController, :create
+    get "/*token", LinkController, :show
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", Crisco do
-  #   pipe_through :api
-  # end
 end

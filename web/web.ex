@@ -34,6 +34,9 @@ defmodule Crisco.Web do
       use Phoenix.Controller
 
       alias Crisco.Repo
+      alias Crisco.Link
+      alias Crisco.Visit
+
       import Ecto.Model
       import Ecto.Query, only: [from: 2]
 
@@ -58,6 +61,8 @@ defmodule Crisco.Web do
   def router do
     quote do
       use Phoenix.Router
+
+      alias Crisco.Plugs.UserInfo
     end
   end
 
