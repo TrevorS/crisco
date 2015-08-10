@@ -9,6 +9,7 @@ defmodule Crisco.Link do
     field :url, :string
     field :token, :string
     field :ip_address, :string
+    field :user_agent, :string
 
     timestamps
   end
@@ -34,7 +35,7 @@ defmodule Crisco.Link do
     end
   end
 
-  @required_fields ~w(url ip_address)
+  @required_fields ~w(url ip_address user_agent)
   @optional_fields ~w()
 
   @doc """

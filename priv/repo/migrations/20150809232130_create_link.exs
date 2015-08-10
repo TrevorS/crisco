@@ -6,6 +6,7 @@ defmodule Crisco.Repo.Migrations.CreateLink do
       add :url, :string
       add :token, :string
       add :ip_address, :string
+      add :user_agent, :string
 
       timestamps
     end
