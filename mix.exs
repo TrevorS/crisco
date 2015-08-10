@@ -17,8 +17,13 @@ defmodule Crisco.Mixfile do
   # Type `mix help compile.app` for more information
   def application do
     [mod: {Crisco, []},
-     applications: [:phoenix, :phoenix_html, :cowboy, :logger,
-                    :phoenix_ecto, :postgrex]]
+     applications: applications(Mix.env)]
+  end
+
+  defp applications(:test), do: applications(:all) ++ [:blacksmith]
+  defp applications(_) do
+    [:phoenix, :phoenix_html, :cowboy,
+      :logger, :phoenix_ecto, :postgrex]
   end
 
   # Specifies which paths to compile per environment
@@ -34,6 +39,8 @@ defmodule Crisco.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:phoenix_html, "~> 2.0"},
      {:phoenix_live_reload, "~> 0.6", only: :dev},
-     {:cowboy, "~> 1.0"}]
+     {:cowboy, "~> 1.0"},
+     {:uuid, "~> 1.0" },
+     {:blacksmith, "~> 0.1"}]
   end
 end

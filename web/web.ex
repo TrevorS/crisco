@@ -19,6 +19,13 @@ defmodule Crisco.Web do
   def model do
     quote do
       use Ecto.Model
+      use Ecto.Model.Callbacks
+
+      alias Ecto.Changeset
+      alias Crisco.Repo
+      alias Crisco.Link
+      alias Crisco.Visit
+      alias Crisco.ValidationFormats
     end
   end
 
