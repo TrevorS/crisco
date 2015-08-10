@@ -25,7 +25,7 @@ defmodule Crisco.Web do
       alias Crisco.Repo
       alias Crisco.Link
       alias Crisco.Visit
-      alias Crisco.ValidationFormats
+      alias Crisco.Validation
     end
   end
 
@@ -69,6 +69,12 @@ defmodule Crisco.Web do
       import Ecto.Model
       import Ecto.Query, only: [from: 2]
 
+    end
+  end
+
+  def validator do
+    quote do
+      import Ecto.Changeset, only: [validate_change: 3, validate_format: 3]
     end
   end
 

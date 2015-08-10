@@ -22,7 +22,7 @@ defmodule Crisco.Visit do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
-    |> validate_format(:ip_address, ValidationFormats.ip_address)
+    |> Validation.IpAddress.validate(:ip_address)
   end
 
   def changeset_from_link(link, params \\ :empty) do

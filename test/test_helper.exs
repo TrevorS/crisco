@@ -25,9 +25,10 @@ defmodule Crisco.Forge do
 
   register :link,
     __struct__: Link,
-    url: "example.com/fake-url",
+    url: "http://example.com/fake-url",
     token: "abc12",
-    ip_address: "127.0.0.1"
+    ip_address: "127.0.0.1",
+    user_agent: "Test/UA"
 
   register :random_link,
     [prototype: :user],
@@ -36,9 +37,10 @@ defmodule Crisco.Forge do
     ip_address: Faker.Internet.ip_v4_address
 
   register :link_params,
-    url: "example.com/fake-url",
+    url: "http://example.com/fake-url",
     token: "abc12",
-    ip_address: "127.0.0.1"
+    ip_address: "127.0.0.1",
+    user_agent: "Test/UA"
 
   register :visit,
     __struct__: Visit,

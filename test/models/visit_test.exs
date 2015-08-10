@@ -14,6 +14,16 @@ defmodule Crisco.VisitTest do
     refute changeset.valid?
   end
 
+  test "changeset with no ip address" do
+    changeset = Visit.changeset(%Visit{}, Forge.link_params(ip_address: nil))
+    refute changeset.valid?
+  end
+
+  test "changeset with no user agent" do
+    changeset = Visit.changeset(%Visit{}, Forge.link_params(user_agent: nil))
+    refute changeset.valid?
+  end
+
   test "changeset with no attributes" do
     changeset = Visit.changeset(%Visit{}, %{})
     refute changeset.valid?

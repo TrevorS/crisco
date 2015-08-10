@@ -47,6 +47,7 @@ defmodule Crisco.Link do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
-    |> validate_format(:ip_address, ValidationFormats.ip_address)
+    |> Validation.IpAddress.validate(:ip_address)
+    |> Validation.URL.validate(:url)
   end
 end
