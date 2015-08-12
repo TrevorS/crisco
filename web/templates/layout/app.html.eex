@@ -13,11 +13,10 @@
 
   <body>
     <div class="container" role="main">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-        </ul>
-        <span class="logo"></span>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <img alt="Crisco" src="<%= static_path(@conn, "/images/logo.png")%>" height="250" width="300">
+        </div>
       </div>
 
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
@@ -25,7 +24,7 @@
 
       <%= @inner %>
 
-    </div> <!-- /container -->
+    </div>
     <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
   </body>
 </html>

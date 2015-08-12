@@ -1,0 +1,3 @@
+<div class="mdl-grid">
+  <p>Your shortened URL: <%= link_to_url(@link) %></p>
+</div>
