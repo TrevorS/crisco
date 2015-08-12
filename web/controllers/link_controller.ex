@@ -21,10 +21,10 @@ defmodule Crisco.LinkController do
     end
   end
 
-  def show(conn, %{"token" => token}) do
+  def show(conn, %{"token" => [token | _]}) do
     case Link.find_by_token!(token) do
       nil -> redirect(conn, to: link_path(conn, :new))
-      link -> redirect(conn, to: link.url)
+      link -> redirect(conn, external: link.url)
     end
   end
 

@@ -8,7 +8,7 @@ defmodule Crisco.Plugs.UserInfo do
   end
 
   defp user_info(conn) do
-    %{ip_address: ip_address(conn), user_agent: user_agent(conn)}
+    %{"ip_address" => ip_address(conn), "user_agent" => user_agent(conn)}
   end
 
   defp ip_address(conn) do
