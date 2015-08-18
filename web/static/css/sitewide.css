@@ -1,0 +1,22 @@
+.center {
+  text-align: center;
+}
+
+.crisco-logo-area {
+  padding-top: 9%;
+}
+
+.crisco-logo {
+  font-family: 'Pacifico', cursive;
+  font-size: 150px;
+  color: #479FFC;
+}
+
+.crisco-form-group {
+  padding-top: 2%;
+}
+
+.crisco-input {
+  height: 50px;
+  font-size: 30px;
+}
